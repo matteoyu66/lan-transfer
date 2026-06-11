@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F5">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="局域网文件传输"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:gravity="center"
+            android:paddingBottom="10dp"/>
+        <TextView android:id="@+id/tv_my_ip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="本机IP：获取中..."
+            android:textSize="13sp"
+            android:background="#E8EAF6"
+            android:padding="10dp"
+            android:layout_marginBottom="6dp"/>
+        <TextView android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="状态：空闲"
+            android:textSize="12sp"
+            android:textColor="#666"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="iOS / 浏览器传输"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#283593"
+            android:layout_marginBottom="6dp"/>
+        <TextView android:id="@+id/tv_http_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#C62828"
+            android:textStyle="bold"
+            android:background="#FFF9C4"
+            android:padding="8dp"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+            <Button android:id="@+id/btn_start_http"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开启网页服务"
+                android:backgroundTint="#7B1FA2"
+                android:textColor="#FFF"
+                android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btn_stop_http"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="停止网页服务"
+                android:backgroundTint="#B71C1C"
+                android:textColor="#FFF"/>
+        </LinearLayout>
+        <Button android:id="@+id/btn_share_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加共享文件（iOS可下载）"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFF"
+            android:layout_marginBottom="12dp"/>
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#BDBDBD" android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android 互传"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#283593"
+            android:layout_marginBottom="6dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btn_start_server"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开启接收"
+                android:backgroundTint="#3F51B5"
+                android:textColor="#FFF"
+                android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btn_stop_server"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="停止接收"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFF"/>
+        </LinearLayout>
+        <EditText android:id="@+id/et_target_ip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入对方Android IP地址"
+          android:inputType="text"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="6dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+            <Button android:id="@+id/btn_select_file"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="选择文件"
+                android:backgroundTint="#009688"
+                android:textColor="#FFF"
+                android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btn_send"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="发送"
+                android:backgroundTint="#FF9800"
+                android:textColor="#FFF"/>
+        </LinearLayout>
+        <ProgressBar android:id="@+id/progress_bar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone"/>
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#BDBDBD" android:layout_marginBottom="8dp"/>
+        <ScrollView android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#FFF"
+            android:padding="8dp">
+            <TextView android:id="@+id/tv_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:text="等待操作...\n"/>
+        </ScrollView>
+    </LinearLayout>
+</ScrollView>
+EOF  
+
+EOP
